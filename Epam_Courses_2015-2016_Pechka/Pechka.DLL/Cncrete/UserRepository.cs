@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using Pechka.DLL.Abstract;
+using Pechka.DLL.Extends;
 using Pechka.DLL.ModelsForWEBUI;
+
 
 namespace Pechka.DLL.Cncrete
 {
@@ -27,7 +31,7 @@ namespace Pechka.DLL.Cncrete
                                  where u.Email == email && u.Password == password
                                  select u).FirstOrDefault();
 
-                    if (user != null)
+                    if (user != null && user.ConfirmedEmail)
                     {
                         isValid = true;
                     }
@@ -40,5 +44,59 @@ namespace Pechka.DLL.Cncrete
             return isValid;
         }
 
+        private bool IsEmailUnique(string email)
+        {
+            return work.Users.FirstOrDefault(u => u.Email==email)==null;
+        }
+
+        public bool SaveNewUser(RegistrationModel user)
+        {
+            if (IsEmailUnique(user.Email))
+            {
+                try
+                {
+                    var userToadd = user.ToUser();
+                    work.Users.Add(userToadd);
+                    work.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            return false;
+        }
+
+        public User GetUser(string email)
+        {
+            return work.Users.FirstOrDefault(u => u.Email == email);
+        }
+
+        public bool ConfirmEmail(string id,string email)
+        {
+            
+            try
+            {
+                int userId = int.Parse(id);
+                var user = work.Users.Find(userId);
+                if (user != null)
+                {
+                    if (user.Email == email)
+                    {
+                        user.ConfirmedEmail = true;
+                        work.Users.AddOrUpdate(user);
+                        work.SaveChanges();
+                        return true;
+                    }
+
+                }
+            }
+            catch
+            {
+                return false;
+            }
+           return false;
+        }
     }
 }

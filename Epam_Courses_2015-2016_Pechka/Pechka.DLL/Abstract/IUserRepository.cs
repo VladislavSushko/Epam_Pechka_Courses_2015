@@ -11,5 +11,8 @@ namespace Pechka.DLL.Abstract
     {
         IEnumerable<User> Users { get; }
        bool ValidateUser(string email, string password);
+       bool SaveNewUser(RegistrationModel user);
+       User GetUser(string email);
+       bool ConfirmEmail(string id, string email);
     }
 }

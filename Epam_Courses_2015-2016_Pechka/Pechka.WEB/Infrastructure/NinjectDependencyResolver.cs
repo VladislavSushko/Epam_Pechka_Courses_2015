@@ -32,6 +32,7 @@ namespace Pechka.WEB.Infrastructure
         private void AddBindings()
         {
             kernel.Bind<IUserRepository>().To<UserRepository>();
+            kernel.Bind<IEmailService>().To<EmailService>();
         }
     }
 }

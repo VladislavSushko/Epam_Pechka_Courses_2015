@@ -77,10 +77,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IEmailService.cs" />
     <Compile Include="Abstract\IUserRepository.cs" />
+    <Compile Include="Cncrete\EmailService.cs" />
     <Compile Include="Cncrete\PechkaContext.cs" />
     <Compile Include="Cncrete\UserRepository.cs" />
+    <Compile Include="Extends\UserExtends.cs" />
     <Compile Include="ModelsForWEBUI\LogViewModel.cs" />
+    <Compile Include="ModelsForWEBUI\RegistrationModel.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

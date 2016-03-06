@@ -21,3 +21,26 @@ C:\Users\Vlad\Documents\Visual Studio 2015\Projects\Epam_Courses_2015-2016_Pechk
 C:\Users\Vlad\Documents\Visual Studio 2015\Projects\Epam_Courses_2015-2016_Pechka\Pechka.DLL\obj\Debug\Pechka.DLL.csprojResolveAssemblyReference.cache
 C:\Users\Vlad\Documents\Visual Studio 2015\Projects\Epam_Courses_2015-2016_Pechka\Pechka.DLL\obj\Debug\Pechka.DLL.dll
 C:\Users\Vlad\Documents\Visual Studio 2015\Projects\Epam_Courses_2015-2016_Pechka\Pechka.DLL\obj\Debug\Pechka.DLL.pdb
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\Pechka.DLL.dll.config
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\Pechka.DLL.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\Pechka.DLL.pdb
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\EntityFramework.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\System.Web.Helpers.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\System.Web.Mvc.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\System.Web.Razor.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\System.Web.WebPages.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\EntityFramework.xml
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\System.Web.Helpers.xml
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\System.Web.Mvc.xml
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\System.Web.Razor.xml
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\System.Web.WebPages.xml
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\obj\Debug\Pechka.DLL.csprojResolveAssemblyReference.cache
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\obj\Debug\Pechka.DLL.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\obj\Debug\Pechka.DLL.pdb
