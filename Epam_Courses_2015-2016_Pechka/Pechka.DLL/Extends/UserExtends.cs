@@ -19,6 +19,8 @@ namespace Pechka.DLL.Extends
             simpleUser.RoleId = 1;
             simpleUser.ConfirmedEmail = false;
             simpleUser.Password = model.Password;
+            simpleUser.ImgType = model.ImgType;
+            simpleUser.ImgData = model.ImgData;
             return simpleUser;
 
         }

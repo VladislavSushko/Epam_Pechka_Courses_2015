@@ -21,5 +21,7 @@ namespace Pechka.DLL.ModelsForWEBUI
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+        public string ImgType { get; set; }
+        public byte[] ImgData { get; set; }
     }
 }

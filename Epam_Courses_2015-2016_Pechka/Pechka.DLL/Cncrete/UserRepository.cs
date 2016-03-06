@@ -53,17 +53,17 @@ namespace Pechka.DLL.Cncrete
         {
             if (IsEmailUnique(user.Email))
             {
-                try
-                {
+                //try
+                //{
                     var userToadd = user.ToUser();
                     work.Users.Add(userToadd);
                     work.SaveChanges();
                     return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                //}
+                //catch
+                //{
+                   // return false;
+                //}
             }
             return false;
         }

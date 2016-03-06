@@ -74,11 +74,17 @@ namespace Pechka.WEB.Controllers
         }
 
         [HttpPost]
-        public ActionResult Registration(RegistrationModel model)
+        public ActionResult Registration(RegistrationModel model, HttpPostedFileBase image = null)
         {
             if (ModelState.IsValid)
             {
-               bool result= userService.SaveNewUser(model);
+                if (image != null)
+                {
+                    model.ImgType = image.ContentType;
+                    model.ImgData = new byte[image.ContentLength];
+                    image.InputStream.Read(model.ImgData, 0, image.ContentLength);
+                }
+                bool result= userService.SaveNewUser(model);
                 if (result)
                 {
                     

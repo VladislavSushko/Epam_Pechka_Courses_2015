@@ -9,7 +9,7 @@ using System.Web.Security;
 
 namespace Pechka.WEB.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     public class RequestController : Controller
     {
         public ActionResult Index()
