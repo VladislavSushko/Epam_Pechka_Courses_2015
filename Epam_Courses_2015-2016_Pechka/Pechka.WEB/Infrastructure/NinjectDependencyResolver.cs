@@ -33,6 +33,7 @@ namespace Pechka.WEB.Infrastructure
         {
             kernel.Bind<IUserRepository>().To<UserRepository>();
             kernel.Bind<IEmailService>().To<EmailService>();
+            kernel.Bind<IAdminService>().To<AdminService>();
         }
     }
 }

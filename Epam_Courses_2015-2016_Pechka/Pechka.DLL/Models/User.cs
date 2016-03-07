@@ -19,5 +19,7 @@ namespace Pechka.DLL.ModelsForWEBUI
         public Role Role { get; set; }
         public string ImgType { get; set; }
         public byte[] ImgData { get; set; }
+        public bool InBlackList { get; set; }
+
     }
 }

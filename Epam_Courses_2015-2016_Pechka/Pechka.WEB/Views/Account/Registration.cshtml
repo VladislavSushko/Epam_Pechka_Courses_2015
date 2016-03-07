@@ -9,7 +9,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <title>Вход в систему</title>
+    <title>Регистрация</title>
 </head>
 <body>
     @using (Html.BeginForm("Registration","Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -17,7 +17,7 @@
         @Html.ValidationSummary(true)
 
         <fieldset>
-            <legend>Войти в систему</legend>
+            <legend>Регистрация</legend>
             <div class="editor-label">
                 @Html.LabelFor(model => model.UserFirstName)
             </div>

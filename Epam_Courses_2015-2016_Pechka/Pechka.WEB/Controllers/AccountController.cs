@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using Pechka.DLL.Abstract;
 using Pechka.DLL.ModelsForWEBUI;
+using Pechka.DLL.ModelsForWEBUI.DTO;
 
 
 namespace Pechka.WEB.Controllers
@@ -111,6 +112,51 @@ namespace Pechka.WEB.Controllers
                
             }
             return View(model);
+        }
+        [Authorize]
+        public FileContentResult GetImg()
+        {
+            var castedUser = userService.GetUser(User.Identity.Name);
+            if (castedUser != null && castedUser.ImgData != null)
+            {
+                return File(castedUser.ImgData, castedUser.ImgType);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        [Authorize]
+        [HttpGet]
+        public ActionResult Setting()
+        {
+            var user = userService.GetUserForsetting(User.Identity.Name);
+            return View(user);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult Setting(UserForSettingDTO model, HttpPostedFileBase image = null)
+        {
+            if (ModelState.IsValid)
+            {
+                if (image != null)
+                {
+                    model.ImgType = image.ContentType;
+                    model.ImgData = new byte[image.ContentLength];
+                    image.InputStream.Read(model.ImgData, 0, image.ContentLength);
+                }
+                if (userService.SaveNewSettings(model, User.Identity.Name))
+                {
+                    ModelState.AddModelError("","Новые настройки были сохранены успешно.");
+                    return View(userService.GetUserForsetting(User.Identity.Name));
+                }
+                
+            }
+            ModelState.AddModelError("", "Новые настройки не были сохранены по одной из следующих причин:");
+            ModelState.AddModelError("", "Данный Email уже занят");
+            ModelState.AddModelError("", "Введен неправильный пароль");
+            return View(userService.GetUserForsetting(User.Identity.Name));
         }
     }
 

@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
+using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using Pechka.DLL.Abstract;
 using Pechka.DLL.Extends;
 using Pechka.DLL.ModelsForWEBUI;
+using Pechka.DLL.ModelsForWEBUI.DTO;
 
 
 namespace Pechka.DLL.Cncrete
@@ -31,7 +34,7 @@ namespace Pechka.DLL.Cncrete
                                  where u.Email == email && u.Password == password
                                  select u).FirstOrDefault();
 
-                    if (user != null && user.ConfirmedEmail)
+                    if (user != null && user.ConfirmedEmail && !user.InBlackList)
                     {
                         isValid = true;
                     }
@@ -53,17 +56,17 @@ namespace Pechka.DLL.Cncrete
         {
             if (IsEmailUnique(user.Email))
             {
-                //try
-                //{
+                try
+                {
                     var userToadd = user.ToUser();
                     work.Users.Add(userToadd);
                     work.SaveChanges();
                     return true;
-                //}
-                //catch
-                //{
-                   // return false;
-                //}
+                }
+                catch
+                {
+                    return false;
+                }
             }
             return false;
         }
@@ -97,6 +100,24 @@ namespace Pechka.DLL.Cncrete
                 return false;
             }
            return false;
+        }
+
+        public UserForSettingDTO GetUserForsetting(string email)
+        {
+            return work.Users.FirstOrDefault(u => u.Email == email).ToUserForSetting();
+        }
+
+        public bool SaveNewSettings(UserForSettingDTO model,string email)
+        {
+            var user = work.Users.FirstOrDefault(u => u.Email == email);
+            if (user != null && (model.NewPassword == null || model.Password == user.Password)&&(user.Email==model.Email||IsEmailUnique(model.Email)))
+            {
+                user = model.ToUser(user);
+                work.Users.AddOrUpdate(user);
+                work.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }
