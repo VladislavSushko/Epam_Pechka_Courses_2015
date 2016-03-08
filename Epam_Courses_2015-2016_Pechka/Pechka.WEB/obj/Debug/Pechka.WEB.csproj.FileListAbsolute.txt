@@ -100,3 +100,16 @@ C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_P
 C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.WEB\bin\System.Web.Webpages.Razor.xml
 C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.WEB\bin\System.Web.Helpers.xml
 C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.WEB\bin\System.Web.Mvc.xml
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.WEB\bin\DelegateDecompiler.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.WEB\bin\Mono.Reflection.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.WEB\bin\Newtonsoft.Json.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.WEB\bin\PerpetuumSoft.Knockout.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.WEB\bin\Newtonsoft.Json.xml
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.WEB\bin\ru\EntityFramework.resources.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.WEB\bin\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.WEB\bin\ru\System.Web.Razor.resources.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.WEB\bin\ru\System.Web.Webpages.resources.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.WEB\bin\ru\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.WEB\bin\ru\System.Web.Webpages.Razor.resources.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.WEB\bin\ru\System.Web.Helpers.resources.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.WEB\bin\ru\System.Web.Mvc.resources.dll

@@ -14,12 +14,14 @@ namespace Pechka.WEB.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly IUserRepository userService;
+        private readonly IUserService userService;
         private readonly IEmailService emailService;
-        public AccountController(IUserRepository repo,IEmailService email)
+        private readonly IScoreService scoreService;
+        public AccountController(IUserService repo,IEmailService email,IScoreService score)
         {
             userService = repo;
             emailService = email;
+            scoreService = score;
 
         }
         public ActionResult Login()
@@ -69,6 +71,8 @@ namespace Pechka.WEB.Controllers
         public ActionResult ConfirmEmail(string Token, string Email)
         {
             var confirmed = userService.ConfirmEmail(Token,Email);
+            var user = userService.GetUser(Email);
+            scoreService.AddNewScore(user.Id);
             return RedirectToAction("Login");
 
 
@@ -157,6 +161,13 @@ namespace Pechka.WEB.Controllers
             ModelState.AddModelError("", "Данный Email уже занят");
             ModelState.AddModelError("", "Введен неправильный пароль");
             return View(userService.GetUserForsetting(User.Identity.Name));
+        }
+
+        public ActionResult HistoryOfBalanse()
+        {
+           var user= userService.Users.FirstOrDefault(u => u.Email == User.Identity.Name);
+            var model = scoreService.HistoryOfScoreByUserId(user.Id);
+            return View(model);
         }
     }
 

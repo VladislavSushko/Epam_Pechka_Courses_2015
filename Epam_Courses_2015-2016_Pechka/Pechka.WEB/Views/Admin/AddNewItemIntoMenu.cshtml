@@ -1,0 +1,50 @@
+﻿@model List<Pechka.DLL.ModelsForWEBUI.DTO.Admin.MenuDTO>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <title>AddNewMenu</title>
+</head>
+<body>
+@using (Html.BeginForm("AddOrUpdateMenu", "Admin"))
+{
+}
+    @foreach (var item in Model)
+    {
+        using (Html.BeginForm("AddOrUpdateMenu", "Admin"))
+        {
+            <div class="editor-label">
+                <label>Id</label>&nbsp;
+                <input class="text-box single-line" id="Id" name="Id" type="text" value="@item.Id">
+            </div>
+            <div class="editor-label">
+                <label>Date</label>&nbsp;
+                <input class="text-box single-line" id="Date" name="Date" type="text" value="@item.Date">
+            </div>
+            <div class="editor-label">
+                <label>Body</label>&nbsp;
+                <input class="text-box single-line" id="Body" name="Body" type="text" value="@item.Body">
+            </div>
+            <div class="editor-label">
+                <label>PriceWithFirst</label>&nbsp;
+                <input class="text-box single-line" id="PriceWithFirst" name="PriceWithFirst" type="text" value="@item.PriceWithFirst">
+            </div>
+            <div class="editor-label">
+                <label>PriceWithoutFirst</label>&nbsp;
+                <input class="text-box single-line" id="PriceWithoutFirst" name="PriceWithoutFirst" type="text" value="@item.PriceWithoutFirst">
+            </div>
+            <div class="editor-label">
+                <label>IsCompleted</label>&nbsp;
+                <input class="text-box single-line" id="IsCompleted" name="IsCompleted" type="text" value="@item.IsCompleted">
+            </div>
+            <input type="submit" value="Save/Update" />
+        }
+    }
+</body>
+</html>

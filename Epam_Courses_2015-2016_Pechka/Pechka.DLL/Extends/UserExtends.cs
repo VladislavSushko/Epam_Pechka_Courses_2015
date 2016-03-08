@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Pechka.DLL.Models;
 using Pechka.DLL.ModelsForWEBUI;
 using Pechka.DLL.ModelsForWEBUI.DTO;
+using Pechka.DLL.ModelsForWEBUI.DTO.Admin;
 
 namespace Pechka.DLL.Extends
 {
@@ -23,6 +25,7 @@ namespace Pechka.DLL.Extends
             simpleUser.Password = model.Password;
             simpleUser.ImgType = model.ImgType;
             simpleUser.ImgData = model.ImgData;
+            simpleUser.ScoreId = null;
             return simpleUser;
 
         }
@@ -52,6 +55,20 @@ namespace Pechka.DLL.Extends
             }
             return user;
 
+        }
+
+        public static UserDto ToUserDTO(this User model)
+        {
+            var castedUser=new UserDto();
+            castedUser.Id = model.Id;
+            castedUser.FirstName = model.FirstName;
+            castedUser.LastName = model.LastName;
+            castedUser.Email = model.Email;
+            castedUser.ConfirmedEmail = model.ConfirmedEmail ? 1 : 0;
+            castedUser.InBlackList = model.InBlackList ? 1 : 0;
+            castedUser.RoleId = model.RoleId;
+            castedUser.Money = model.LastScore.Money;
+            return castedUser;
         }
     }
 }

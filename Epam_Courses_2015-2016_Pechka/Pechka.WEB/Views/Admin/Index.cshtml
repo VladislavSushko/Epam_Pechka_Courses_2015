@@ -1,0 +1,67 @@
+﻿@model Pechka.DLL.ModelsForWEBUI.DTO.Admin.UsersForAdmin
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <title>Users</title>
+</head>
+<body>
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Пользователи</legend>
+        @using (Html.BeginForm("UpdateUser", "Admin"))
+        {
+        }
+
+        @foreach (var user in Model.Users)
+        {
+            using (Html.BeginForm("UpdateUser", "Admin"))
+            {
+                <div class="editor-label">
+                    <label>Id</label>&nbsp;
+                    <input class="text-box single-line" id="Id" name="Id" type="text" value="@user.Id">
+                </div>
+                <div class="editor-label">
+                    <label>Name</label>&nbsp;
+                    <input class="text-box single-line" id="FirstName" name="FirstName" type="text" value="@user.FirstName">
+                </div>
+                <div class="editor-label">
+                    <label>Surname</label>&nbsp;
+                    <input class="text-box single-line" id="LastName" name="LastName" type="text" value="@user.LastName">
+                </div>
+                <div class="editor-label">
+                    <label>Email</label>&nbsp;
+                    <input class="text-box single-line" id="Email" name="Email" type="text" value="@user.Email">
+                </div>
+                <div class="editor-label">
+                    <label>Money</label>&nbsp;<input class="text-box single-line" id="Money" name="Money" type="text" value="@user.Money">
+                </div>
+                <div class="editor-label">
+                    <label>ChangeRoleId(1-User,2-Admin)</label>
+                    <input class="text-box single-line" id="RoleId" name="RoleId" type="text" value="@user.RoleId">
+                </div>
+                <div class="editor-label">
+                    <label>ConfirmEmail</label>&nbsp;
+                    <input class="text-box single-line" id="ConfirmedEmail" name="ConfirmedEmail" type="text" value="@user.ConfirmedEmail">
+                </div>
+                <div class="editor-label">
+                    <label>InBlackList(1-true,2-false)</label>&nbsp;
+                    <input class="text-box single-line" id="InBlackList" name="InBlackList" type="text" value="@user.InBlackList">
+                </div>
+                <input type="submit" value="Save"/>
+
+
+            }
+        }
+    </fieldset>
+}
+<div data-bind="foreah:user"></div>
+</body>
+</html>

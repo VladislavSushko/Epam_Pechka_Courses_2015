@@ -44,3 +44,5 @@ C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_P
 C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\obj\Debug\Pechka.DLL.csprojResolveAssemblyReference.cache
 C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\obj\Debug\Pechka.DLL.dll
 C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\obj\Debug\Pechka.DLL.pdb
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Vlad\Documents\GitHub\Epam_Pechka_Courses_2015\Epam_Courses_2015-2016_Pechka\Pechka.DLL\bin\Debug\ru\EntityFramework.SqlServer.resources.dll

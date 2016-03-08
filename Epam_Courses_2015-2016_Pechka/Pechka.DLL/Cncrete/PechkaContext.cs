@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Pechka.DLL.Models;
 using Pechka.DLL.ModelsForWEBUI;
 
 namespace Pechka.DLL.Cncrete
@@ -12,5 +14,8 @@ namespace Pechka.DLL.Cncrete
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
+        public DbSet<Score> Scores { get; set; }
+        public DbSet<Menu> Meny { get; set; }
+
     }
 }

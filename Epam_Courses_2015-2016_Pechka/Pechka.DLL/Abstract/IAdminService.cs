@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Pechka.DLL.ModelsForWEBUI;
+using Pechka.DLL.ModelsForWEBUI.DTO.Admin;
 
 namespace Pechka.DLL.Abstract
 {
     public interface IAdminService
     {
-        IEnumerable<User> GetUsersToManageByAdmin(string email);
+        IEnumerable<UserDto> GetUsersToManageByAdmin(string email);
+        void AddUserToBlackList(int Id, int temp,int role);
     }
 }

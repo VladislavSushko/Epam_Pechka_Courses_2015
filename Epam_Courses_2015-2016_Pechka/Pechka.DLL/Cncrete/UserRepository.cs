@@ -4,19 +4,21 @@ using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using Pechka.DLL.Abstract;
 using Pechka.DLL.Extends;
+using Pechka.DLL.Models;
 using Pechka.DLL.ModelsForWEBUI;
 using Pechka.DLL.ModelsForWEBUI.DTO;
 
 
 namespace Pechka.DLL.Cncrete
 {
-    public class UserRepository: IUserRepository
+    public class UserRepository: IUserService
     {
         PechkaContext work=new PechkaContext();
         public IEnumerable<User> Users
@@ -30,9 +32,7 @@ namespace Pechka.DLL.Cncrete
 
            try
                 {
-                    User user = (from u in work.Users
-                                 where u.Email == email && u.Password == password
-                                 select u).FirstOrDefault();
+            var user = work.Users.FirstOrDefault(u=>u.Email==email && u.Password==password);
 
                     if (user != null && user.ConfirmedEmail && !user.InBlackList)
                     {
@@ -51,22 +51,37 @@ namespace Pechka.DLL.Cncrete
         {
             return work.Users.FirstOrDefault(u => u.Email==email)==null;
         }
-
         public bool SaveNewUser(RegistrationModel user)
         {
             if (IsEmailUnique(user.Email))
             {
-                try
-                {
+                //try
+               // {
                     var userToadd = user.ToUser();
                     work.Users.Add(userToadd);
                     work.SaveChanges();
-                    return true;
-                }
-                catch
+                    var castedUSer = work.Users.FirstOrDefault(u => u.Email == userToadd.Email);
+                if (castedUSer != null)
                 {
-                    return false;
+                    Score newScore = new Score();
+                    newScore.Id = castedUSer.Id;
+                    newScore.Date = DateTime.Now;
+                    newScore.Money = 0;
+                    newScore.UserId = castedUSer.Id;
+                    work.Scores.Add(newScore);
+                    work.SaveChanges();
+                    var makeSh = work.Scores.FirstOrDefault(u => u.UserId == castedUSer.Id);
+                    castedUSer.ScoreId = makeSh.Id;
+                    work.Users.AddOrUpdate(castedUSer);
+                    work.SaveChanges();
+
                 }
+                return true;
+               // }
+                //catch
+               // {
+                    //return false;
+                //}
             }
             return false;
         }
@@ -118,6 +133,22 @@ namespace Pechka.DLL.Cncrete
                 return true;
             }
             return false;
+        }
+
+        public bool SetUserLastScore(int userId, int scoreId)
+        {
+            try
+            {
+                var user = work.Users.FirstOrDefault(u => u.Id == userId);
+                user.ScoreId = scoreId;
+                work.Users.AddOrUpdate(user);
+                work.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

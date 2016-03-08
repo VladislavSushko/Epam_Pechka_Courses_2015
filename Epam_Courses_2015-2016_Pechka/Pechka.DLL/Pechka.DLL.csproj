@@ -45,6 +45,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
@@ -79,23 +81,35 @@
   <ItemGroup>
     <Compile Include="Abstract\IAdminService.cs" />
     <Compile Include="Abstract\IEmailService.cs" />
-    <Compile Include="Abstract\IUserRepository.cs" />
+    <Compile Include="Abstract\IMenuService.cs" />
+    <Compile Include="Abstract\IScoreService.cs" />
+    <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Cncrete\AdminService.cs" />
     <Compile Include="Cncrete\EmailService.cs" />
+    <Compile Include="Cncrete\MenuService.cs" />
     <Compile Include="Cncrete\PechkaContext.cs" />
+    <Compile Include="Cncrete\ScoreService.cs" />
     <Compile Include="Cncrete\UserRepository.cs" />
+    <Compile Include="Extends\MenuExtends.cs" />
+    <Compile Include="Extends\ScoreExtends.cs" />
     <Compile Include="Extends\UserExtends.cs" />
+    <Compile Include="ModelsForWEBUI\DTO\Admin\MenuDTO.cs" />
     <Compile Include="ModelsForWEBUI\DTO\Admin\UsersForAdmin.cs" />
     <Compile Include="ModelsForWEBUI\DTO\UserForSettingDTO.cs" />
     <Compile Include="ModelsForWEBUI\LogViewModel.cs" />
     <Compile Include="ModelsForWEBUI\RegistrationModel.cs" />
+    <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Score.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

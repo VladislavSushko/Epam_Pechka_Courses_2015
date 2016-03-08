@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Pechka.DLL.Models;
 
 namespace Pechka.DLL.ModelsForWEBUI
 {
@@ -20,6 +21,8 @@ namespace Pechka.DLL.ModelsForWEBUI
         public string ImgType { get; set; }
         public byte[] ImgData { get; set; }
         public bool InBlackList { get; set; }
+        public int? ScoreId { get; set; }
+        public Score LastScore { get; set; }
 
     }
 }

@@ -1,0 +1,6 @@
+﻿@model List<Pechka.DLL.Models.Score>
+    @foreach (var elem in Model)
+    {
+        <div><label>balance</label>@elem.Money</div>
+        <div><label>Date</label>@elem.Date</div>
+    }
