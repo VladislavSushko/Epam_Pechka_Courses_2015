@@ -96,9 +96,14 @@
     <Compile Include="ModelsForWEBUI\DTO\Admin\MenuDTO.cs" />
     <Compile Include="ModelsForWEBUI\DTO\Admin\UsersForAdmin.cs" />
     <Compile Include="ModelsForWEBUI\DTO\UserForSettingDTO.cs" />
+    <Compile Include="ModelsForWEBUI\DTO\User\MenuForUserDTO.cs" />
+    <Compile Include="ModelsForWEBUI\DTO\User\ReviewDTO.cs" />
+    <Compile Include="ModelsForWEBUI\DTO\User\UserForReviewDTO.cs" />
     <Compile Include="ModelsForWEBUI\LogViewModel.cs" />
     <Compile Include="ModelsForWEBUI\RegistrationModel.cs" />
     <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Review.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Score.cs" />
     <Compile Include="Models\User.cs" />

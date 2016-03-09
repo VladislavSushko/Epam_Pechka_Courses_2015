@@ -79,6 +79,7 @@ namespace Pechka.WEB.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult Registration(RegistrationModel model, HttpPostedFileBase image = null)
         {
             if (ModelState.IsValid)
@@ -162,7 +163,8 @@ namespace Pechka.WEB.Controllers
             ModelState.AddModelError("", "Введен неправильный пароль");
             return View(userService.GetUserForsetting(User.Identity.Name));
         }
-
+        [Authorize]
+        [HttpGet]
         public ActionResult HistoryOfBalanse()
         {
            var user= userService.Users.FirstOrDefault(u => u.Email == User.Identity.Name);

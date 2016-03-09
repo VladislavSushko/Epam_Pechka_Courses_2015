@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ using Pechka.DLL.Abstract;
 using Pechka.DLL.Extends;
 using Pechka.DLL.Models;
 using Pechka.DLL.ModelsForWEBUI.DTO.Admin;
+using Pechka.DLL.ModelsForWEBUI.DTO.User;
 
 namespace Pechka.DLL.Cncrete
 {
@@ -19,10 +21,10 @@ namespace Pechka.DLL.Cncrete
             {
                 var intermediateResult = work.Meny;
                     var result = intermediateResult.ToList().Select(item => item.ToMenuDTO()).ToList();
-                    result.Add(new MenuDTO());
                     result.Sort();
                     result.Reverse();
-                    return result;
+                result.Add(new MenuDTO());
+                return result;
     
             }
         }
@@ -81,6 +83,25 @@ namespace Pechka.DLL.Cncrete
                 {
                     return false;
                 }
+            }
+        }
+
+        public List<MenuForUserDTO> GetMenuForUser(string email)
+        {
+            using (var work = new PechkaContext())
+            {
+                var userId = work.Users.FirstOrDefault(u => u.Email == email).Id;
+                var menu = work.Meny.ToList();
+                foreach (var item in menu)
+                {
+                    var elem = work.Reviews.Include(u => u.User).Where(u => u.MenuId == item.Id);
+                    item.Reviews = elem.Count() != 0 ? elem.ToList() : null;
+                    var order= work.Orders.FirstOrDefault(u => u.UserId == userId && u.MenuId == item.Id);
+                    if(order!=null)
+                    item.Order.Add(order);
+
+                }
+                return menu.ToUserMenuDto();
             }
         }
     }

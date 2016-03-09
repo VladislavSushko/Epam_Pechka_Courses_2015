@@ -14,5 +14,7 @@ namespace Pechka.DLL.Models
         public decimal PriceWithFirst { get; set; }
         public decimal PriceWithoutFirst { get; set; }
         public bool IsCompleted { get; set; }
+        public List<Review> Reviews { get; set; } 
+        public List<Order> Order { get; set; }
     }
 }

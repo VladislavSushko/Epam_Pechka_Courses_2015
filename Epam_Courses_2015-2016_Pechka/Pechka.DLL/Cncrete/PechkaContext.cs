@@ -16,6 +16,8 @@ namespace Pechka.DLL.Cncrete
         public DbSet<Role> Roles { get; set; }
         public DbSet<Score> Scores { get; set; }
         public DbSet<Menu> Meny { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Review> Reviews { get; set; }
 
     }
 }
