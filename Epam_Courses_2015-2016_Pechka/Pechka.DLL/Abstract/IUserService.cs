@@ -18,5 +18,6 @@ namespace Pechka.DLL.Abstract
        UserForSettingDTO GetUserForsetting(string email);
        bool SaveNewSettings(UserForSettingDTO model, string email);
        bool SetUserLastScore(int userId, int scoreId);
+       User GetUserById(int id);
     }
 }

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Pechka.DLL.Abstract;
 using Pechka.DLL.Extends;
 using Pechka.DLL.Models;
+using Pechka.DLL.ModelsForWEBUI;
 using Pechka.DLL.ModelsForWEBUI.DTO.Admin;
 using Pechka.DLL.ModelsForWEBUI.DTO.User;
 
@@ -97,9 +98,7 @@ namespace Pechka.DLL.Cncrete
                     var elem = work.Reviews.Include(u => u.User).Where(u => u.MenuId == item.Id);
                     item.Reviews = elem.Count() != 0 ? elem.ToList() : null;
                     var order= work.Orders.FirstOrDefault(u => u.UserId == userId && u.MenuId == item.Id);
-                    if(order!=null)
-                    item.Order.Add(order);
-
+                    if(order!=null)item.Order.Add(order);
                 }
                 return menu.ToUserMenuDto();
             }

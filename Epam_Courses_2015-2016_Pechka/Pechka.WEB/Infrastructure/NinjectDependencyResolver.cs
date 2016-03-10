@@ -36,6 +36,7 @@ namespace Pechka.WEB.Infrastructure
             kernel.Bind<IAdminService>().To<AdminService>();
             kernel.Bind<IScoreService>().To<ScoreService>();
             kernel.Bind<IMenuService>().To<MenuService>();
+            kernel.Bind<IReviewService>().To<ReviewService>();
         }
     }
 }

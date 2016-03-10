@@ -119,9 +119,17 @@ namespace Pechka.WEB.Controllers
             return View(model);
         }
         [Authorize]
-        public FileContentResult GetImg()
+        public FileContentResult GetImg(int id =0)
         {
-            var castedUser = userService.GetUser(User.Identity.Name);
+            var castedUser=new User();
+            if (id != 0)
+            {
+                castedUser = userService.GetUserById(id);
+            }
+            else
+            {
+                castedUser = userService.GetUser(User.Identity.Name);
+            }
             if (castedUser != null && castedUser.ImgData != null)
             {
                 return File(castedUser.ImgData, castedUser.ImgType);

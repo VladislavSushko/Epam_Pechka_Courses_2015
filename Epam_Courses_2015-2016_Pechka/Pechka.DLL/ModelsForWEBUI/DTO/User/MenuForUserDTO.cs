@@ -15,6 +15,7 @@ namespace Pechka.DLL.ModelsForWEBUI.DTO.User
         public decimal WithoutFirst { get; set; }
         public int OrderWithFirst { get; set; }
         public int OrderWithoutFirst { get; set; }
+        public string NewReview { get; set; }
         public List<ReviewDTO> Reviews { get; set; }
 
     }

@@ -1,7 +1,89 @@
-﻿
-@{
-    Layout = null;
-}
+﻿@model List<Pechka.DLL.ModelsForWEBUI.DTO.User.MenuForUserDTO>
+    @{
+        Layout = null;
+    }
 
-<!DOCTYPE html>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+        <title>Menu</title>
+    </head>
+    <body>
+    @using (Html.BeginForm())
+    {
+        <fieldset>
+            <legend>OrderOrEditing</legend>
+            @using (Html.BeginForm("OrderNewOrEditing", "User"))
+            {
+            }
+            @foreach (var item in Model)
+            {
+                using (Html.BeginForm("OrderNewOrEditing", "User"))
+                {
+                    <div class="editor-label">
+                        <label>Id</label>&nbsp;
+                        <input class="text-box single-line" id="MenuId" name="MenuId" type="text" value="@item.MenuId">
+                    </div>
+                    <div class="editor-label">
+                        <label>Date</label>&nbsp;<label>@item.Date</label>
+                    </div>
+                    <div class="editor-label">
+                        <label>Body</label>&nbsp;<label>@item.Body</label>
+                    </div>
+                    <div class="editor-label">
+                        <label>PriceWithFirst</label>&nbsp;<label>@item.WithFirst</label>
+                    </div>
+                    <div class="editor-label">
+                        <label>PriceWithoutFirst</label>&nbsp;<label>@item.WithoutFirst</label>
+                    </div>
+                    <div class="editor-label">
+                        <label>OrderWithoutFirst</label>&nbsp;<label>@item.OrderWithoutFirst</label>
+                    </div>
+                    <div class="editor-label">
+                        <label>OrderWithFirst</label>&nbsp;<label>@item.OrderWithFirst</label>
+                    </div>
+                    <div class="editor-label">
+                        <label>YourOrder</label>&nbsp;
+                        WithFirst<input class="text-box single-line" id="OrderWithFirst" name="OrderWithFirst" type="text" value="@item.OrderWithFirst">
+                        WithoutFirst<input class="text-box single-line" id="OrderWithoutFirst" name="OrderWithoutFirst" type="text" value="@item.OrderWithoutFirst">
+                    </div>
+                    <div class="editor-label">
+                        AddNewReview<input class="text-box single-line" id="NewReview" name="NewReview" type="text" value="@item.NewReview\">
+                    </div>
+                    <fieldset>
+                        <legend>Reviews</legend>
+                        @foreach (var review in item.Reviews)
+                        {
+                            if (review.User == null)
+                            {
+                                
+                            }
+                            else
+                            {
+                                <div class="editor-label">
+                                    <label>@review.Body</label>
+                                </div>
+                                <div class="editor-label">
+                                    <label>@review.User.FirstName+" "+@review.User.LastName</label>
+                                </div>
+                                if (review.User.ImgType != null)
+                                {
+                                    <img class="img-thumbnail" width="150" height="150"
+                                         src="@Url.Action("GetImg", "Account",new { @review.User.Id})"/>
+                                }
+
+                            }
+                        }
+                    </fieldset>
+                    <p>
+                        <input type="submit" value="AddOrderOrEdiit/AddReview" />
+                    </p>
+                }
+            }
+</fieldset>
+    }
+    </body>
+    </html>
 

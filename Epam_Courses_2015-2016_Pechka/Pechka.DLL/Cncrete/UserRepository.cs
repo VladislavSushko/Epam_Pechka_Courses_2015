@@ -150,5 +150,10 @@ namespace Pechka.DLL.Cncrete
                 return false;
             }
         }
+
+        public User GetUserById(int id)
+        {
+            return work.Users.FirstOrDefault(u => u.Id == id);
+        }
     }
 }
