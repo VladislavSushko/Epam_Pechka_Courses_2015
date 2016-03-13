@@ -11,6 +11,6 @@ namespace Pechka.DLL.Abstract
     public interface IAdminService
     {
         IEnumerable<UserDto> GetUsersToManageByAdmin(string email);
-        void AddUserToBlackList(int Id, int temp,int role);
+        void AddUserToBlackList(int id, int temp,int role);
     }
 }
