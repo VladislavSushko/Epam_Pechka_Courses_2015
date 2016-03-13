@@ -88,7 +88,7 @@ namespace Pechka.DLL.Cncrete
 
         public User GetUser(string email)
         {
-            return work.Users.FirstOrDefault(u => u.Email == email);
+            return work.Users.Include(u=>u.LastScore).FirstOrDefault(u => u.Email == email);
         }
 
         public bool ConfirmEmail(string id,string email)
@@ -139,7 +139,7 @@ namespace Pechka.DLL.Cncrete
         {
             try
             {
-                var user = work.Users.FirstOrDefault(u => u.Id == userId);
+
                 user.ScoreId = scoreId;
                 work.Users.AddOrUpdate(user);
                 work.SaveChanges();

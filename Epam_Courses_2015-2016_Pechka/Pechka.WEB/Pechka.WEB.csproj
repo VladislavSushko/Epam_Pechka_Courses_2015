@@ -183,6 +183,7 @@
     <Content Include="Scripts\jquery-2.1.1.min.map" />
     <Content Include="Views\Admin\AddNewItemIntoMenu.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Admin\OrderByAllUsers.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

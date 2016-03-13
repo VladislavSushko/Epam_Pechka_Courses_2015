@@ -12,6 +12,14 @@
     <title>Users</title>
 </head>
 <body>
+<ul>
+    <li><a href="@Url.Action("Index", "User")">MyOrder</a></li>
+    <li><a href="@Url.Action("HistoryOfBalanse", "Account")">HistoryOfBalance</a></li>
+    <li><a href="@Url.Action("AddNewItemIntoMenu", "Admin")">ChangeMenu</a></li>
+    <li><a href="@Url.Action("OrderByAllUsers", "Admin")">Statistics</a></li>
+    <li><a href="@Url.Action("Setting","Account")">Settings</a></li>
+    <li><a href="@Url.Action("Logout","Account")">Logout</a></li>
+</ul>
 @using (Html.BeginForm())
 {
     <fieldset>

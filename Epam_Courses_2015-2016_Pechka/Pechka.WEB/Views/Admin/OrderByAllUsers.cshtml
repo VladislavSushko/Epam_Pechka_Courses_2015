@@ -1,0 +1,53 @@
+﻿@model Pechka.DLL.ModelsForWEBUI.DTO.Admin.OrdersDTO
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>OrderByAllUsers</title>
+</head>
+<body>
+    <ul>
+        <li><a href="@Url.Action("Index", "User")">MyOrder</a></li>
+        <li><a href="@Url.Action("HistoryOfBalanse", "Account")">HistoryOfBalance</a></li>
+        <li><a href="@Url.Action("AddNewItemIntoMenu", "Admin")">ChangeMenu</a></li>
+        <li><a href="@Url.Action("Index", "Admin")">ManageUsers</a></li>
+        <li><a href="@Url.Action("Setting","Account")">Settings</a></li>
+        <li><a href="@Url.Action("Logout","Account")">Logout</a></li>
+    </ul>
+<div>
+    @using (Html.BeginForm("GetOrders", "Admin"))
+    {
+        <div class="editor-label">
+            <label>Date</label>&nbsp;
+            <input class="text-box single-line" id="StartDate" name="StartDate" type="text" value="@Model.StartDate">
+        </div>
+        <input type="submit" value="Open" />
+        if (Model.Orders != null)
+        {
+            foreach (var order in Model.Orders)
+            {
+                <div ><label>Name </label>@order.User.FirstName @order.User.LastName
+            </div>
+                if (order.WithFirst)
+                {
+                    <div><label>WithFirst</label></div>
+                }
+                if (order.WithoutFirst)
+                {
+                    <div><label>WithoutFirst</label></div>
+                }
+
+            }
+            <div><label>WithFirst--@Model.CountOrdersWithFirst</label>
+            </div>
+            <div><label>WithoutFirst--@Model.CountOrdersWithoutFirst</label></div>
+        }
+    }
+</div>
+</body>
+</html>

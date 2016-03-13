@@ -12,40 +12,48 @@
     <title>AddNewMenu</title>
 </head>
 <body>
+    <ul>
+        <li><a href="@Url.Action("Index", "User")">MyOrder</a></li>
+        <li><a href="@Url.Action("HistoryOfBalanse", "Account")">HistoryOfBalance</a></li>
+        <li><a href="@Url.Action("Index", "Admin")">ManageUsers</a></li>
+        <li><a href="@Url.Action("OrderByAllUsers", "Admin")">Statistics</a></li>
+        <li><a href="@Url.Action("Setting","Account")">Settings</a></li>
+        <li><a href="@Url.Action("Logout","Account")">Logout</a></li>
+    </ul>
 @using (Html.BeginForm("AddOrUpdateMenu", "Admin"))
 {
 }
 <p>Новый эллемент в меню:</p>
-    @foreach (var item in Model)
+@foreach (var item in Model)
+{
+    using (Html.BeginForm("AddOrUpdateMenu", "Admin"))
     {
-        using (Html.BeginForm("AddOrUpdateMenu", "Admin"))
-        {
-            <div class="editor-label">
-                <label>Id</label>&nbsp;
-                <input class="text-box single-line" id="Id" name="Id" type="text" value="@item.Id">
-            </div>
-            <div class="editor-label">
-                <label>Date</label>&nbsp;
-                <input class="text-box single-line" id="Date" name="Date" type="text" value="@item.Date">
-            </div>
-            <div class="editor-label">
-                <label>Body</label>&nbsp;
-                <input class="text-box single-line" id="Body" name="Body" type="text" value="@item.Body">
-            </div>
-            <div class="editor-label">
-                <label>PriceWithFirst</label>&nbsp;
-                <input class="text-box single-line" id="PriceWithFirst" name="PriceWithFirst" type="text" value="@item.PriceWithFirst">
-            </div>
-            <div class="editor-label">
-                <label>PriceWithoutFirst</label>&nbsp;
-                <input class="text-box single-line" id="PriceWithoutFirst" name="PriceWithoutFirst" type="text" value="@item.PriceWithoutFirst">
-            </div>
-            <div class="editor-label">
-                <label>IsCompleted</label>&nbsp;
-                <input class="text-box single-line" id="IsCompleted" name="IsCompleted" type="text" value="@item.IsCompleted">
-            </div>
-            <input type="submit" value="Save/Update" />
-        }
+        <div class="editor-label">
+            <label>Id</label>&nbsp;
+            <input class="text-box single-line" id="Id" name="Id" type="text" value="@item.Id">
+        </div>
+        <div class="editor-label">
+            <label>Date</label>&nbsp;
+            <input class="text-box single-line" id="Date" name="Date" type="text" value="@item.Date">
+        </div>
+        <div class="editor-label">
+            <label>Body</label>&nbsp;
+            <input class="text-box single-line" id="Body" name="Body" type="text" value="@item.Body">
+        </div>
+        <div class="editor-label">
+            <label>PriceWithFirst</label>&nbsp;
+            <input class="text-box single-line" id="PriceWithFirst" name="PriceWithFirst" type="text" value="@item.PriceWithFirst">
+        </div>
+        <div class="editor-label">
+            <label>PriceWithoutFirst</label>&nbsp;
+            <input class="text-box single-line" id="PriceWithoutFirst" name="PriceWithoutFirst" type="text" value="@item.PriceWithoutFirst">
+        </div>
+        <div class="editor-label">
+            <label>IsCompleted</label>&nbsp;
+            <input class="text-box single-line" id="IsCompleted" name="IsCompleted" type="text" value="@item.IsCompleted">
+        </div>
+        <input type="submit" value="Save/Update"/>
     }
+}
 </body>
 </html>

@@ -18,16 +18,16 @@ namespace Pechka.DLL.Cncrete
             reviewToAdd.Body = body;
             using (var work = new PechkaContext())
             {
-                //try
-               // {
+                try
+                {
                     work.Reviews.Add(reviewToAdd);
                     work.SaveChanges();
                     return true;
-                //}
-                //catch
-                //{
-                    //return false;
-               // }
+                }
+                catch
+                {
+                    return false;
+                }
             }
         }
     }

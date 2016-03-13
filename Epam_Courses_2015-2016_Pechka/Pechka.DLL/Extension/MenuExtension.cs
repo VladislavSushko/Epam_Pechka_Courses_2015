@@ -48,16 +48,19 @@ namespace Pechka.DLL.Extends
                 newMenuForUser.OrderWithFirst = item.Order==null?0: item.Order[0].WithFirst ? 1 : 0;
                 newMenuForUser.OrderWithoutFirst = item.Order!=null? item.Order[0].WithoutFirst ? 1 : 0:0;
                 newMenuForUser.Reviews=new List<ReviewDTO>();
-                foreach (var item2 in item.Reviews)
+                if (item.Reviews != null)
                 {
-                    var newReviews=new ReviewDTO();
-                    newReviews.Body = item2.Body;
-                    newReviews.User=new UserForReviewDTO();
-                    newReviews.User.Id = item2.UserId;
-                    newReviews.User.FirstName = item2.User.FirstName;
-                    newReviews.User.LastName = item2.User.LastName;
-                    newReviews.User.ImgType = item2.User.ImgType;
-                    newMenuForUser.Reviews.Add(newReviews);
+                    foreach (var item2 in item.Reviews)
+                    {
+                        var newReviews = new ReviewDTO();
+                        newReviews.Body = item2.Body;
+                        newReviews.User = new UserForReviewDTO();
+                        newReviews.User.Id = item2.UserId;
+                        newReviews.User.FirstName = item2.User.FirstName;
+                        newReviews.User.LastName = item2.User.LastName;
+                        newReviews.User.ImgType = item2.User.ImgType;
+                        newMenuForUser.Reviews.Add(newReviews);
+                    }
                 }
                 newMenuForUser.Reviews.Add(new ReviewDTO());
                 resultList.Add(newMenuForUser);

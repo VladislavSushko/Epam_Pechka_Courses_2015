@@ -82,12 +82,14 @@
     <Compile Include="Abstract\IAdminService.cs" />
     <Compile Include="Abstract\IEmailService.cs" />
     <Compile Include="Abstract\IMenuService.cs" />
+    <Compile Include="Abstract\IOrderService.cs" />
     <Compile Include="Abstract\IReviewService.cs" />
     <Compile Include="Abstract\IScoreService.cs" />
     <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Cncrete\AdminService.cs" />
     <Compile Include="Cncrete\EmailService.cs" />
     <Compile Include="Cncrete\MenuService.cs" />
+    <Compile Include="Cncrete\OrderService.cs" />
     <Compile Include="Cncrete\PechkaContext.cs" />
     <Compile Include="Cncrete\ReviewService.cs" />
     <Compile Include="Cncrete\ScoreService.cs" />
@@ -96,6 +98,7 @@
     <Compile Include="Extension\ScoreExtension.cs" />
     <Compile Include="Extension\UserExtension.cs" />
     <Compile Include="ModelsForWEBUI\DTO\Admin\MenuDTO.cs" />
+    <Compile Include="ModelsForWEBUI\DTO\Admin\OrdersDTO.cs" />
     <Compile Include="ModelsForWEBUI\DTO\Admin\UsersForAdmin.cs" />
     <Compile Include="ModelsForWEBUI\DTO\UserForSettingDTO.cs" />
     <Compile Include="ModelsForWEBUI\DTO\User\MenuForUserDTO.cs" />

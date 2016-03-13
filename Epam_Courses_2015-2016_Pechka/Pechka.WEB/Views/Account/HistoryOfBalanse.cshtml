@@ -1,4 +1,17 @@
 ﻿@model List<Pechka.DLL.Models.Score>
+<ul>
+    @if(@User.IsInRole("Admin")){
+
+    <li><a href="@Url.Action("Index", "Admin")">ManageUsers</a></li>
+    <li><a href="@Url.Action("AddNewItemIntoMenu", "Admin")">ChangeMenu</a></li>
+    <li><a href="@Url.Action("OrderByAllUsers", "Admin")">Statistics</a></li>
+
+
+    }
+    <li><a href="@Url.Action("Index", "User")">MyOrders</a></li>
+    <li><a href="@Url.Action("Setting", "Account")">Settings</a></li>
+    <li><a href="@Url.Action("Logout", "Account")">Logout</a></li>
+</ul>
     @foreach (var elem in Model)
     {
         <div><label>balance</label>@elem.Money</div>

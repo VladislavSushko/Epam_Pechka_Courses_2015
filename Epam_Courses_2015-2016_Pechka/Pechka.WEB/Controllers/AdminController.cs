@@ -16,13 +16,15 @@ namespace Pechka.WEB.Controllers
         private readonly IScoreService scoreService;
         private readonly IUserService userService;
         private readonly IMenuService menuService;
+        private readonly IOrderService orderService;
 
-        public AdminController(IAdminService service,IScoreService score,IUserService user,IMenuService menu)
+        public AdminController(IAdminService service,IScoreService score,IUserService user,IMenuService menu,IOrderService order)
         {
             adminService = service;
             scoreService = score;
             userService = user;
             menuService = menu;
+            orderService = order;
         }
         public ActionResult Index()
         {
@@ -75,6 +77,20 @@ namespace Pechka.WEB.Controllers
                 ModelState.AddModelError("","При выполнении действия возникли ошибки");
             }
             return RedirectToAction("AddNewItemIntoMenu");
+        }
+        [HttpGet]
+        public ActionResult OrderByAllUsers()
+        {
+            var model=new OrdersDTO();
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult GetOrders(OrdersDTO model)
+        {
+            model.Date=DateTime.Parse(model.StartDate);
+            var result = orderService.GetOrdersForAdmin(model.Date);
+            return View("OrderByAllUsers", result);
+
         }
     }
 }
