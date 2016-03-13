@@ -139,10 +139,11 @@ namespace Pechka.DLL.Cncrete
         {
             try
             {
-
+                var user = work.Users.Include(u=>u.Role).FirstOrDefault(u=>u.Id==userId);
                 user.ScoreId = scoreId;
                 work.Users.AddOrUpdate(user);
                 work.SaveChanges();
+
                 return true;
             }
             catch
